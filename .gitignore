@@ -1,0 +1,12 @@
+*.pyc
+
+/otls/backup/
+hip/backup/
+_backup/
+
+#ignore other unimportant expanded HDA files
+*.OPfallbacks
+*.OPdummydefs
+*.createtimes
+*.modtimes
+/data/dependencies/python/

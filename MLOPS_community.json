@@ -1,0 +1,6 @@
+{
+    "path": "$HOUDINI_USER_PREF_DIR/extern/MLOPS-stage",
+    "load_package_once": true,
+    "version": "19.5",
+    "enable": true
+}

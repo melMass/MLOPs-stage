@@ -1,0 +1,396 @@
+# Dialog script for melMass::beta::SD_from_scene::2.0 automatically generated
+
+{
+    name	melMass::beta::SD_from_scene::2.0
+    script	melMass::beta::SD_from_scene::2.0
+    label	"Sd From Scene (Beta)"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+    outputlabel	1	"Project points"
+
+    groupcollapsible {
+        name    "folder2"
+        label   "Prompt Settings"
+        parmtag { "group_default" "1" }
+        grouptag { "group_type" "collapsible" }
+
+        parm {
+            name    "weigthtedprompting"
+            label   "Weighted Prompting"
+            type    toggle
+            default { "on" }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "prompt"
+            label   "Prompt"
+            type    string
+            default { "something, blue, (in the forest:1)" }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "editor" "1" }
+            parmtag { "editorlines" "5" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "prompt2"
+            label   "Negative"
+            type    string
+            default { "ugly, malformed\n\n\n\n" }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "editor" "1" }
+            parmtag { "editorlines" "5" }
+            parmtag { "script_callback_language" "python" }
+        }
+    }
+
+    groupcollapsible {
+        name    "folder9"
+        label   "Model"
+        parmtag { "group_default" "1" }
+        grouptag { "group_type" "collapsible" }
+
+        parm {
+            name    "cache_only"
+            label   "Local Cache"
+            type    toggle
+            default { [ "on" hscript-expr ] }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "model"
+            label   "Model"
+            type    directory
+            default { "$MLOPS_SD_MODEL" }
+            menureplace {
+                [ "import mlops_utils, os" ]
+                [ "root = os.path.join(\"$MLOPS\", \"data\", \"models\", \"diffusers\")" ]
+                [ "return mlops_utils.return_downloaded_checkpoints(root=root)" ]
+                language python
+            }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "device3"
+            label   "Compute Device"
+            type    ordinal
+            default { "0" }
+            menu {
+                "cuda"  "cuda"
+                "cpu"   "cpu"
+                "mps"   "mps"
+            }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        groupsimple {
+            name    "folder10"
+            label   "Inference Settings"
+            grouptag { "group_type" "simple" }
+
+            parm {
+                name    "seed"
+                label   "Seed"
+                type    integer
+                default { "44" }
+                range   { 0 10 }
+                parmtag { "autoscope" "0000000000000000" }
+                parmtag { "script_callback_language" "python" }
+            }
+            parm {
+                name    "scheduler"
+                label   "Scheduler"
+                type    ordinal
+                default { "euler a" }
+                menu {
+                    [ "opmenu -l -a sd_scheduler1 scheduler" ]
+                }
+                parmtag { "autoscope" "0000000000000000" }
+                parmtag { "script_callback_language" "python" }
+            }
+            parm {
+                name    "inference_steps"
+                label   "Num Inference Steps"
+                type    integer
+                default { "20" }
+                range   { 1 100 }
+                parmtag { "autoscope" "0000000000000000" }
+                parmtag { "script_callback_language" "python" }
+            }
+            parm {
+                name    "cfg_scale"
+                label   "CFG Scale"
+                type    float
+                default { "7.5" }
+                range   { 0 10 }
+                parmtag { "autoscope" "0000000000000000" }
+                parmtag { "script_callback_language" "python" }
+            }
+            parm {
+                name    "guidance_strength"
+                label   "Image Guidance Strength"
+                type    float
+                default { "0.8" }
+                range   { 0 1 }
+                parmtag { "autoscope" "0000000000000000" }
+                parmtag { "script_callback_language" "python" }
+            }
+            parm {
+                name    "seamless"
+                label   "Tiling"
+                type    toggle
+                default { [ "off" hscript-expr ] }
+                parmtag { "autoscope" "0000000000000000" }
+                parmtag { "script_callback_language" "python" }
+            }
+            parm {
+                name    "attentionslicing"
+                label   "Attention Slicing"
+                type    toggle
+                default { [ "off" hscript-expr ] }
+                parmtag { "autoscope" "0000000000000000" }
+                parmtag { "script_callback_language" "python" }
+            }
+        }
+
+    }
+
+    groupcollapsible {
+        name    "folder11"
+        label   "Scene Settings"
+        parmtag { "group_default" "1" }
+        grouptag { "group_type" "collapsible" }
+
+        groupcollapsible {
+            name    "folder13"
+            label   "Objects"
+            parmtag { "group_default" "1" }
+            grouptag { "group_type" "simple" }
+
+            multiparm {
+                name    "numobj"
+                label    "Number of Objects"
+                default 1
+                parmtag { "autoscope" "0000000000000000" }
+
+                parm {
+                    name    "enable#"
+                    label   "Enable Merge #"
+                    type    toggle
+                    default { "1" }
+                }
+                parm {
+                    name    "objpath#"
+                    label   "Object #"
+                    type    oppath
+                    default { "" }
+                    parmtag { "opfilter" "!!SOP!!" }
+                    parmtag { "oprelative" "." }
+                }
+                parm {
+                    name    "group#"
+                    label   "Group #"
+                    type    string
+                    default { "" }
+                }
+                parm {
+                    name    "expand#"
+                    label   "Expand Group #"
+                    type    toggle
+                    default { "0" }
+                }
+                parm {
+                    name    "sepparm2_#_3"
+                    label   "sepparm2_#_3"
+                    type    separator
+                    default { "" }
+                }
+                parm {
+                    name    "xformtype#"
+                    label   "Transform"
+                    type    ordinal
+                    default { "0" }
+                    menu {
+                        "none"  "None"
+                        "local" "Into This Object"
+                    }
+                    parmtag { "autoscope" "0000000000000000" }
+                    parmtag { "script_callback_language" "python" }
+                }
+            }
+
+        }
+
+        groupcollapsible {
+            name    "folder0"
+            label   "Cameras"
+            parmtag { "group_default" "1" }
+
+            multiswitcher {
+                name    "cameras"
+                label    "Number of Cameras"
+                default 0
+
+                parm {
+                    name    "camerapath#"
+                    label   "Camera Path"
+                    type    oppath
+                    default { "/obj/cam1" }
+                    help    "Camera that will be rendered"
+                    parmtag { "autoscope" "0000000000000000" }
+                    parmtag { "opfilter" "/obj/camera" }
+                    parmtag { "oprelative" "." }
+                }
+                parm {
+                    name    "projmode#"
+                    label   "Projection"
+                    type    integer
+                    default { [ "ch(strcat(chs(\"camerapath\"),\"/projection\"))" hscript-expr ] }
+                    menu {
+                        "persp" "Perspective"
+                        "ortho" "Orthograpohic"
+                    }
+                    range   { 0 10 }
+                    parmtag { "autoscope" "0000000000000000" }
+                    parmtag { "script_callback_language" "python" }
+                }
+                parm {
+                    name    "nearclip#"
+                    label   "Near Clip"
+                    type    float
+                    default { "0.1" }
+                    range   { 0! 100 }
+                    parmtag { "autoscope" "0000000000000000" }
+                    parmtag { "script_callback_language" "python" }
+                }
+                parm {
+                    name    "bg_distance#"
+                    label   "BG distance"
+                    type    float
+                    default { "50" }
+                    range   { 0 10 }
+                    parmtag { "script_callback_language" "python" }
+                }
+                parm {
+                    name    "positive#"
+                    label   "Positive"
+                    type    string
+                    default { "" }
+                    parmtag { "script_callback_language" "python" }
+                }
+                parm {
+                    name    "negative#"
+                    label   "Negative"
+                    type    string
+                    default { "" }
+                    parmtag { "script_callback_language" "python" }
+                }
+            }
+
+        }
+
+        groupcollapsible {
+            name    "folder12"
+            label   "Control Net"
+            parmtag { "group_default" "1" }
+            grouptag { "group_type" "simple" }
+
+            parm {
+                name    "width"
+                label   "Width"
+                type    integer
+                default { "512" }
+                help    "Image pixel width (should match SD settings)"
+                range   { 1! 50 }
+                parmtag { "autoscope" "0000000000000000" }
+                parmtag { "script_callback_language" "python" }
+            }
+            parm {
+                name    "height"
+                label   "Height"
+                type    integer
+                default { "512" }
+                help    "Image pixel height (should match SD settings)"
+                range   { 1! 50 }
+                parmtag { "autoscope" "0000000000000000" }
+                parmtag { "script_callback_language" "python" }
+            }
+            parm {
+                name    "normal_conditioningscale"
+                label   "Normal Conditioning Scale"
+                type    float
+                default { "0.5" }
+                range   { 0! 1! }
+                parmtag { "autoscope" "0000000000000000" }
+                parmtag { "script_callback_language" "python" }
+            }
+            parm {
+                name    "depth_conditioningscale"
+                label   "Depth Conditioning Scale"
+                type    float
+                default { "0.5" }
+                range   { 0! 1! }
+                parmtag { "autoscope" "0000000000000000" }
+                parmtag { "script_callback_language" "python" }
+            }
+        }
+
+    }
+
+    groupcollapsible {
+        name    "folder1"
+        label   "Cache"
+
+        parm {
+            name    "anyframe"
+            label   "Cache Any Frame"
+            type    toggle
+            default { "on" }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "maxframes"
+            label   "Max Frames to Cache"
+            type    integer
+            default { "2500" }
+            range   { 0! 10000 }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "clearonchange"
+            label   "Clear Cache When Change Upstream"
+            type    toggle
+            default { "on" }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "clear"
+            label   "Clear Cache"
+            type    button
+            default { "0" }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "clearframe"
+            label   "Clear Current Frame Cache"
+            type    button
+            default { "0" }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+    }
+
+}

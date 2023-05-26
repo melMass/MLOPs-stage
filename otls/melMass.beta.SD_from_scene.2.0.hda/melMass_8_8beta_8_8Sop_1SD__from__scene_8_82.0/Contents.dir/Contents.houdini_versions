@@ -1,0 +1,30 @@
+{
+	"values":["19.5.569"
+	],
+	"indexes":{
+		"hdaroot/cache1.userdata":0,
+		"hdaroot/points_to_mesh/transform3.userdata":0,
+		"hdaroot/points_to_mesh/transform1.userdata":0,
+		"hdaroot/points_to_mesh/grid3.userdata":0,
+		"hdaroot/points_to_mesh/output0.userdata":0,
+		"hdaroot/name1.userdata":0,
+		"hdaroot/foreach_count1.userdata":0,
+		"hdaroot/points_to_mesh/transform2.userdata":0,
+		"hdaroot/points_to_mesh/merge1.userdata":0,
+		"hdaroot/points_to_mesh/pointvop2/subtract1.userdata":0,
+		"hdaroot/points_to_mesh/pointvop2/const1.userdata":0,
+		"hdaroot/points_to_mesh/pointvop2.userdata":0,
+		"hdaroot/merge1.userdata":0,
+		"hdaroot/points_to_mesh/pointvop1/subtract1.userdata":0,
+		"hdaroot/points_to_mesh/proj_group.userdata":0,
+		"hdaroot/points_to_mesh/pointvop1/const1.userdata":0,
+		"hdaroot/object_merge1.userdata":0,
+		"hdaroot/points_to_mesh/pointvop1.userdata":0,
+		"hdaroot/points_to_mesh.userdata":0,
+		"hdaroot/points_to_mesh/proj.userdata":0,
+		"hdaroot/foreach_end1.userdata":0,
+		"hdaroot/points_to_mesh/merge2.userdata":0,
+		"hdaroot/output1.userdata":0,
+		"hdaroot/foreach_begin1.userdata":0
+	}
+}
