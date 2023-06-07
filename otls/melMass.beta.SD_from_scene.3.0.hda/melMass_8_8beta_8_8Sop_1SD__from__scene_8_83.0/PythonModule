@@ -1,0 +1,19 @@
+import melmass.parm_utils
+
+def save_json(kwargs):
+    
+    from importlib import reload
+    
+    reload(melmass.parm_utils)
+    node = kwargs["node"]
+    
+    skip = node.parm("skip_defaults").eval()
+    melmass.parm_utils.serialize_node_state(kwargs["node"], skip_defaults=skip)    
+
+    
+def load_json(kwargs):
+    from importlib import reload
+    reload(melmass.parm_utils)
+    node = kwargs["node"]
+    parms = melmass.parm_utils.deserialize_node_state(node)
+    print(parms)

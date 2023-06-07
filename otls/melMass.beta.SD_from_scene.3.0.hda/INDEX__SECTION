@@ -1,0 +1,14 @@
+Operator:     melMass::beta::SD_from_scene::3.0
+Label:        Sd From Scene
+Path:         oplib:/melMass::beta::Sop/SD_from_scene::3.0?melMass::beta::Sop/SD_from_scene::3.0
+Icon:         opdef:/melMass::beta::Sop/SD_from_scene::3.0?IconSVG
+Table:        Sop
+License:      
+Extra:        inputcolors='0 ' outputcolors='1 "RGB 0.700195 0.700195 0.700195" ' 
+User:         
+Inputs:       0 to 0
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Fri May 28 10:24:07 2023
+
