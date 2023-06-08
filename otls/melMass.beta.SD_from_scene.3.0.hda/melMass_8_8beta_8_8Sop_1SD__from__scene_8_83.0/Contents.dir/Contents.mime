@@ -32,7 +32,7 @@ Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position -11.5964 8.85548
+position -11.8788 9.36136
 connectornextid 0
 flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -48,7 +48,7 @@ stat
 {
   create -1
   modify -1
-  author melMass@ATELIER-44
+  author melMass@ATERLIER-44
   access 0777
 }
 color UT_Color RGB 0.8 0.8 0.8 
@@ -103,7 +103,7 @@ Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position -0.999091 -1.05947
+position 0.136108 -0.886304
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -392,15 +392,13 @@ width	[ 8	locks=0 ]	(	[ width	512 ] 	)
 height	[ 8	locks=0 ]	(	[ height	512 ] 	)
 folder1_1	[ 0	locks=0 ]	(	0	)
 normal_conditioningscale	[ 8	locks=0 ]	(	[ normal_conditioningscale	0.5 ] 	)
+normal_blur	[ 0	locks=0 ]	(	0	)
 depth_conditioningscale	[ 8	locks=0 ]	(	[ depth_conditioningscale	0.5 ] 	)
+depth_blur	[ 0	locks=0 ]	(	0	)
 folder0	[ 0	locks=0 ]	(	1	)
 cameras	[ 0	locks=0 ]	(	[ cameras	3 ] 	)
 folder2	[ 0	locks=0 ]	(	0	)
 numobj	[ 0	locks=0 ]	(	[ numobj	1 ] 	)
-enable1	[ 0	locks=0 ]	(	[ enable1	1 ] 	)
-objpath1	[ 0	locks=0 ]	(	[ objpath1	"" ] 	)
-group1	[ 0	locks=0 ]	(	[ group1	"" ] 	)
-expand1	[ 0	locks=0 ]	(	[ expand1	0 ] 	)
 camerapath1	[ 0	locks=0 ]	(	[ camerapath1	/obj/cam1 ] 	)
 projmode1	[ 0	locks=0 ]	(	[ projmode1	0 ] 	)
 nearclip1	[ 0	locks=0 ]	(	[ nearclip1	0.10000000000000001 ] 	)
@@ -428,6 +426,10 @@ minangle3	[ 0	locks=0 ]	(	[ minangle3	0 ] 	)
 maxangle3	[ 0	locks=0 ]	(	[ maxangle3	0.34999999999999998 ] 	)
 bg_distance3	[ 0	locks=0 ]	(	[ bg_distance3	50 ] 	)
 uv_distance3	[ 0	locks=0 ]	(	[ uv_distance3	0.0040000000000000001 ] 	)
+enable1	[ 0	locks=0 ]	(	[ enable1	1 ] 	)
+objpath1	[ 0	locks=0 ]	(	[ objpath1	"" ] 	)
+group1	[ 0	locks=0 ]	(	[ group1	"" ] 	)
+expand1	[ 0	locks=0 ]	(	[ expand1	0 ] 	)
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
@@ -1222,7 +1224,7 @@ sopflags sopflags =
 comment ""
 position -2.75678 -3.72659
 connectornextid 2
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
+flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
 {
 1 "output1"
@@ -1300,7 +1302,7 @@ sopflags sopflags =
 comment ""
 position -0.117448 -20.1073
 connectornextid 1
-flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
 {
 }

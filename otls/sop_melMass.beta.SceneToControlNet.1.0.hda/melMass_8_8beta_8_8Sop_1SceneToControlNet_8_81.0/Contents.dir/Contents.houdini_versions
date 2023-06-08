@@ -1,7 +1,10 @@
 {
-	"values":["19.5.569"
+	"values":["19.5.569","1.0"
 	],
 	"indexes":{
+		"hdaroot/attribtransfer4.userdata":0,
+		"hdaroot/attribtransfer3.userdata":0,
+		"hdaroot/attribblur1.userdata":1,
 		"hdaroot/output0.userdata":0,
 		"hdaroot/name2.userdata":0,
 		"hdaroot/attribtransfer2.userdata":0,

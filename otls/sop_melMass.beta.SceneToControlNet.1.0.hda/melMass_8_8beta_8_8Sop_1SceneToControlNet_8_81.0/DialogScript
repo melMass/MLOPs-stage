@@ -49,12 +49,28 @@
             parmtag { "script_callback_language" "python" }
         }
         parm {
+            name    "normal_blur"
+            label   "Normal Blur"
+            type    float
+            default { "0" }
+            range   { 0 1 }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
             name    "depth_conditioningscale"
             label   "Depth Conditioning Scale"
             type    float
             default { "0.5" }
             range   { 0! 1! }
             parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "depth_blur"
+            label   "Depth Blur"
+            type    float
+            default { "0" }
+            range   { 0 1 }
             parmtag { "script_callback_language" "python" }
         }
     }

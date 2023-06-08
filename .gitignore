@@ -10,3 +10,4 @@ _backup/
 *.createtimes
 *.modtimes
 /data/dependencies/python/
+help/images/_stock
