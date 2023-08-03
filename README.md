@@ -31,7 +31,10 @@ The heart or SD from Scene, this creates a strip of images from the given camera
 
 This high level node wraps the whole `Camera to Points` -> `Control Net` -> `SD Inference` -> `Upscaled` -> `Texture Projection & Baking` pipeline
 ![image](https://github.com/melMass/MLOPs-stage/assets/7041726/fc8fcd82-6731-4783-bad2-13c188a4a5f4)
-![image](https://github.com/melMass/MLOPs-stage/assets/7041726/4b30dd05-e8e3-4c37-9e0b-c7da549ece91)
+
+https://github.com/melMass/MLOPs-stage/assets/7041726/887f6617-dda1-4162-8cb4-ce5b8378020f
+
+
 
 ### DeepBump (soon™)
 
